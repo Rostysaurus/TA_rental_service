@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   resources :tas, only: [:index, :show]do
     resources :bookings, [:new, :create]
   end
-    resources :bookings, [:show, :destroy]
+    resources :bookings, [:index, :show, :destroy]
 end
