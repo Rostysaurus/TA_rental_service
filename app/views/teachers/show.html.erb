@@ -1,0 +1,20 @@
+<h1 >More info about <%= @teacher.name%></h1>
+
+<div class="container-fluid">
+  <div class="row justify-content-md-center">
+      <div class="col col-6 card p-3">
+        <%# <%= cl_image_tag @teacher.photo.key, height: 300, width: 400, crop: :fill %> %> Your pic here
+        <h2><%= @teacher.name %></h2>
+        <p><%= @teacher.description %></p>
+        <p><%= @teacher.address %></p>
+        <p><%= @teacher.price%> EUR</p>
+        <p><%= '⭐️' * @teacher.rating.to_i %></p>
+        <p><%= link_to "Book now!", new_teacher_booking_path(@teacher)%></p>
+        <% if @teacher.user == current_user %>
+        <p><%= link_to "Delete user!", teacher_path(@teacher), method: :delete, data: { confirm: "Are you sure?" }%></p>
+        <% end %>
+        <p class="text-end"><%= link_to "< Back to your bookings", bookings_path%></p>
+        <p class="text-end"><%= link_to "Find another teacher", teachers_path%></p>
+    </div>
+  </div>
+</div>

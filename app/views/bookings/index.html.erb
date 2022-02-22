@@ -1,0 +1,15 @@
+<h1 >Here are your bookings</h1>
+
+<div class="container-fluid">
+  <div class="row justify-content-md-center gap-3">
+    <% @bookings.each do |booking| %>
+      <div class="col col-3 card">
+        <p><%= link_to booking.teacher.name, booking_path(booking)%></p>
+        <p><%= booking.teacher.price%> EUR</p>
+        <p><%= '⭐️' * booking.teacher.rating %></p>
+    </div>
+  <% end %>
+  </div>
+</div>
+
+<p class="text-start p-5"><%= link_to "Find another teacher", teachers_path%></p>

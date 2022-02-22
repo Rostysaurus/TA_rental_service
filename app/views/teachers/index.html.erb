@@ -1,0 +1,14 @@
+<h1 >We are your teachers</h1>
+
+
+<div class="container-fluid">
+  <div class="row justify-content-md-center">
+    <% @teachers.each do |teacher| %>
+      <div class="col col-3 card gap-3">
+        <p><%= link_to teacher.name, teacher_path(teacher)%></p>
+        <p><%= teacher.price%> EUR</p>
+        <p><%= '⭐️' * teacher.rating.to_i %></p>
+    </div>
+  <% end %>
+  </div>
+</div>
