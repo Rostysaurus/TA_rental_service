@@ -9,6 +9,7 @@
 require 'faker'
 
 puts "Cleaning database of techers..."
+User.destroy_all
 Teacher.destroy_all
 
 puts 'Creating 40 fake Teachers...'
@@ -17,6 +18,10 @@ user1 = User.new(
   password: '123456',
   name: 'Karl'
 )
+
+file = URI.open('app/assets/images/users/1.jpg')
+user1.photo.attach(io: file, filename: '1.jpg', content_type: 'image/jpg')
+
 user1.save!
 
 40.times do
