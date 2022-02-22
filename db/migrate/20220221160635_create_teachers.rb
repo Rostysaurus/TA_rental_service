@@ -1,6 +1,6 @@
-class CreateTa < ActiveRecord::Migration[6.1]
+class CreateTeachers < ActiveRecord::Migration[6.1]
   def change
-    create_table :ta do |t|
+    create_table :teachers do |t|
       t.string :address
       t.string :description
       t.integer :price
