@@ -9,8 +9,11 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     # @review.user = current_user
     @review.teacher = @teacher
-    @review.save
+    if @review.save
     redirect_to teacher_path(@teacher)
+    else
+      render :new
+    end
   end
 
   private
@@ -22,5 +25,4 @@ class ReviewsController < ApplicationController
   def review_params
     params.require(:review).permit(:comment)
   end
-
 end
