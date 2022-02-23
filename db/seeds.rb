@@ -9,8 +9,9 @@
 require 'faker'
 
 puts "Cleaning database of techers..."
-User.destroy_all
+
 Teacher.destroy_all
+User.destroy_all
 
 puts 'Creating 40 fake Teachers...'
 user1 = User.new(
@@ -19,8 +20,8 @@ user1 = User.new(
   name: 'Karl'
 )
 
-file = URI.open('app/assets/images/users/1.jpg')
-user1.photo.attach(io: file, filename: '1.jpg', content_type: 'image/jpg')
+# file = URI.open('app/assets/images/users/1.jpg')
+# user1.photo.attach(io: file, filename: '1.jpg', content_type: 'image/jpg')
 
 user1.save!
 
@@ -32,6 +33,7 @@ user1.save!
     price: rand(20..50),
     rating: rand(0..5)
   )
+  teacher.photo.attach(io: File.open(File.join(Rails.root,'app/assets/images/users/1.jpg')), filename: '1')
   teacher.user = user1
   teacher.save!
 end
