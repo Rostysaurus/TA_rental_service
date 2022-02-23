@@ -7,7 +7,7 @@
         <p><%= @booking.teacher.address %></p>
         <p><%= @booking.teacher.price%> EUR</p>
         <p><%= '⭐️' * @booking.teacher.rating %></p>
-        <p class="text-start"><%= link_to "<Delete", booking_path(@booking), method: :delete, data: { confirm: "Are you sure?" }%></p>
+        <p class="text-start"><%= link_to "Cancel", booking_path(@booking), method: :delete, data: { confirm: "Are you sure?" }%></p>
          <p class="text-end"><%= link_to "<Back to your bookings", bookings_path%></p>
         <p class="text-end"><%= link_to "Find another teacher", teachers_path%></p>
     </div>
