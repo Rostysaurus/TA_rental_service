@@ -1,48 +1,53 @@
 // Specific CSS for your home-page
 .banner {
-  background-size: cover;
-  background-position: center;
-  padding: 150px 0;
+  color: white;
+  height: 100vh;
+  background-size: cover !important;
   text-align: center;
   display: flex;
   justify-content: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   margin-bottom: 0px;
 }
 
-.banner-content h1 {
-  margin: 0;
+.form-home {
   color: black;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
-  font-weight: bold;
-}
-
-.banner p {
+  width: 510px;
+  border-radius: 6px;
   font-size: 20px;
-  color: black;
-  opacity: .7;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  opacity: 0.9;
+  height: 50px;
+  border: 0.5px solid rgba(30,30,30,0.3);
 }
 
 .btn-home {
   padding: 8px 24px;
-  border-radius: 4px;
-  background: #4184db;
-  border: none;
+  border-radius: 6px;
+  background-color: #2b71c2;
   font-weight: bolder;
+  color: white;
+  border: none;
   height: 50px;
+  width: 115px;
+  margin: 0px 0px 0px 20px;
+  &:hover{
+    background-color: #507db1;
+    border-color: #527392;
+  }
 }
 
-.home-container {
+.top-container {
   display: flex;
   justify-content: center;
   height: auto;
 }
 
-.home-content {
-   width: 60%;
-   padding: 50px 0px;
+.top-content {
+   width: 70%;
+   padding: 60px 0px;
 }
+
 
 .card-home {
   position: relative;
@@ -60,4 +65,20 @@
 .card-teacher {
   position: absolute;
   color: white
+}
+
+.btn-show {
+  height: 35px;
+  border-radius: 5px;
+  font-size: 15px;
+  border-color: #0557b6;
+  padding: 10px 14px;
+  text-decoration: none;
+  font-weight: bolder;
+  color: white;
+  background-color: #2b71c2;
+  &:hover{
+    border-color: #507db1;
+    background-color: #527392
+  }
 }

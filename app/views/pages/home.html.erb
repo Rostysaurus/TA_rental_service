@@ -1,31 +1,31 @@
 
-
-<div class="banner" style="background-image: ,url(<%= %>);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=brooke-cagle-g1Kr4Ozfoac-unsplash.jpg);">
   <div class="banner-content">
-    <h1>TA Rental</h1>
-    <p>Rent a TA</p>
+    <h1>Discover a new way to learn skills from the best
+    teachers available!</h1>
+    <p>Rent a Teacher from the comfort of your home.</p>
+     <br>
 
-    <a class="btn-home" href="#">Book now</a>
+    <%= form_tag(teachers_path, method: :get) do %>
+      <%= search_field_tag 'address', nil, class: "form-home", placeholder: "Type your address.."%>
+      <%= submit_tag "Search", class: "btn-home"%>
+      <% end %>
   </div>
 </div>
 
 
-<div class= "home_container">
-  <div class= "home_content">
-   <h3> class="text-center">Our top teachers</h3>
-   <div class="row">
-     <% @teachers.each do |teacher| %>
-      <div class="col-xs-12 cold-md-4">
-      <% link_to teacher_path(teacher), class: "teachers" do %>
-       <div class="card-home">
-           <div class="card-description">
-             <p>teacher's description</p>
-           </div>
-          <p class="card-teacher"> <%= teacher.price %> </p>
-       </div>
-     <% end %>
-     </div>
-    <% end %>
-   </div>
+<div class="container-fluid">
+   <br>
+  <h3>Our top rated teachers<h3>
+  <br>
+  <div class="row justify-content-md-center">
+    <% @teachers.each do |teacher| %>
+      <div class="col col-3 card gap-3">
+        <p><%= link_to teacher.name, teacher_path(teacher)%></p>
+        <p><%= teacher.price%> EUR</p>
+        <p><%= '⭐️' * teacher.rating.to_i %></p>
+    </div>
+  <% end %>
   </div>
- </div>
+</div>
+<p class="text-end" ><%= link_to "See all teachers", teachers_path%></p>
