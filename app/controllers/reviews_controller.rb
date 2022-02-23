@@ -1,5 +1,13 @@
 class ReviewsController < ApplicationController
-  before_action :find_teacher
+  before_action :find_teacher, only: [:new, :create]
+
+  def index
+    @review = Review.all
+  end
+
+  def show
+    @review = Review.find(params[:id])
+  end
 
   def new
     @review = Review.new
