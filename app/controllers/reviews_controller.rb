@@ -2,12 +2,12 @@ class ReviewsController < ApplicationController
   before_action :find_teacher, only: [:new, :create]
 
   def index
-    @review = Review.all
+    @reviews = Review.all
   end
 
-  def show
-    @review = Review.find(params[:id])
-  end
+  # def show
+  #   @review = Review.find(params[:id])
+  # end
 
   def new
     @review = Review.new
@@ -15,7 +15,7 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
-    # @review.user = current_user
+    @review.user = current_user
     @review.teacher = @teacher
     if @review.save
     redirect_to teacher_path(@teacher)

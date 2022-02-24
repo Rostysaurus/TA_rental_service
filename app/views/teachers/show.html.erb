@@ -18,7 +18,7 @@
         <p class="text-end"><%= link_to "Add a new review", new_teacher_review_path(@teacher)%></p>
 
         <p><% @teacher.reviews.each do |review| %></p>
-         <p><%= @review.comment %></p>
+         <p><%= review.comment %></p>
         <% end %>
 
     </div>
