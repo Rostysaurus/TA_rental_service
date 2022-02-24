@@ -1,15 +1,19 @@
 
 .card {
-color: black;
-height: 250px;
-margin-bottom: 50px;
-transition: all 0.3s ease;
-background-position: center;
-background-size: cover;
-text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-position: relative;
-margin-bottom: 50px;
+  color: black;
+  height: 250px;
+  margin-bottom: 50px;
+  transition: all 0.3s ease;
+  background-position: center;
+  background-size: cover;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  position: relative;
+  margin-bottom: 50px;
+  &.auto-height {
+    height: auto;
+  }
 }
+
 
 .card a {
   color: white;
