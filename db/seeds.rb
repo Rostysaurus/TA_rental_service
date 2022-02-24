@@ -9,30 +9,61 @@
 require 'faker'
 
 puts "Cleaning database of techers..."
-User.destroy_all
+
 Teacher.destroy_all
+User.destroy_all
 
-puts 'Creating 40 fake Teachers...'
-user1 = User.new(
-  email: 'test@test.com',
-  password: '123456',
-  name: 'Karl'
-)
+puts 'Creating 3 fake users...'
 
-file = URI.open('app/assets/images/users/1.jpg')
-user1.photo.attach(io: file, filename: '1.jpg', content_type: 'image/jpg')
+  user1 = User.new(
+    email: "#{Faker::Creature::Dog.name}@dogs.com", #patches@dogs.com
+    password: '123456',
+    name: Faker::Creature::Dog.name
+    )
+  user1.photo.attach(io: File.open(File.join(Rails.root,"app/assets/images/users/1.png")), filename: "1")
+  user1.save!
+
+  user2 = User.new(
+    email: "#{Faker::Creature::Dog.name}@dogs.com", #duke@dogs.com
+    password: '123456',
+    name: Faker::Creature::Dog.name
+    )
+  user2.photo.attach(io: File.open(File.join(Rails.root,"app/assets/images/users/2.png")), filename: "2")
+  user2.save!
+
+  user3 = User.new(
+    email: "#{Faker::Creature::Dog.name}@dogs.com", #zoe@dogs.com
+    password: '123456',
+    name: Faker::Creature::Dog.name
+    )
+  user3.photo.attach(io: File.open(File.join(Rails.root,"app/assets/images/users/3.png")), filename: "3")
+  user3.save!
+
+puts "Finished creating users!"
+
+# file = URI.open('app/assets/images/users/1.jpg')
+# user1.photo.attach(io: file, filename: '1.jpg', content_type: 'image/jpg')
 
 user1.save!
 
-40.times do
-  teacher = Teacher.new(
-    name:    Faker::Superhero.name,
-    address: "#{Faker::Address.street_address}, #{Faker::Address.city}",
-    description: Faker::Quote.matz,
-    price: rand(20..50),
-    rating: rand(0..5)
-  )
-  teacher.user = user1
-  teacher.save!
+puts 'Creating 20 fake teachers...'
+count2 = 0
+20.times do
+  if count2 <= 20
+    count2 += 1
+    teacher = Teacher.new(
+      name:    Faker::Superhero.name,
+      address: "#{Faker::Address.street_address}, #{Faker::Address.city}",
+      description: Faker::Quote.matz,
+      price: rand(20..50),
+      rating: rand(0..5)
+    )
+    teacher.photo.attach(io: File.open(File.join(Rails.root,"app/assets/images/teachers/#{count2}.png")), filename: "#{count2}")
+    teacher.user = user1
+    teacher.save!
+    count2 += 1
+  elsif count2 > 20
+    count2 = 0
+  end
 end
-puts 'Finished!'
+puts 'Finished creating teachers!'
