@@ -16,11 +16,21 @@
         <p class="text-end"><%= link_to "< Back to your bookings", bookings_path%></p>
         <p class="text-end"><%= link_to "Find another teacher", teachers_path%></p>
         <p class="text-end"><%= link_to "Add a new review", new_teacher_review_path(@teacher)%></p>
-
-        <p><% @teacher.reviews.each do |review| %></p>
-         <p><%= review.comment %></p>
-        <% end %>
-
     </div>
   </div>
 </div>
+
+
+<p><% @teacher.reviews.each do |review| %></p>
+<div class="container-fluid">
+<div class="row justify-content-md-center">
+<div class="col col-6 card p-3">
+<div class="card-product">
+  <div class="card-product-infos">
+    <h3> review.comment </h3>
+  </div>
+</div>
+  </div>
+  </div>
+  </div>
+<% end %>
