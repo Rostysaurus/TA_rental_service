@@ -17,17 +17,19 @@
         <p class="text-end"><%= link_to "Find another teacher", teachers_path%></p>
         <p class="text-end"><%= link_to "Add a new review", new_teacher_review_path(@teacher)%></p>
     </div>
-  </div>
-</div>
 
-<% @teacher.reviews.each do |review| %>
-<div class="container-fluid card-product">
-  <div class="card-product">
-    <%= cl_image_tag current_user.photo.key, height: 30, width: 40, crop: :fill%>
-    <div class="card-product-infos">
-     <h5>What did <%=review.user.name%> think about this teacher?</h5>
-      <p><%= review.comment %></p>
-     </div>
+    <div class="row justify-content-md-center">
+    <div class="col col-6 card auto-height p-3">
+    <% @teacher.reviews.each do |review| %>
+      <div class="card-product-review">
+        <%= cl_image_tag current_user.photo.key, height: 30, width: 40, crop: :fill%>
+        <div class="card-product-review-infos">
+         <h2>What did <%=review.user.name%> think about this teacher?</h2>
+          <p><%= review.comment %></p>
+        </div>
+      </div>
+    <% end %>
+    </div>
+    </div>
   </div>
 </div>
-<% end %>
