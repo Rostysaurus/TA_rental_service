@@ -21,8 +21,8 @@
           <p class="btn btn-blue"><%= link_to "Book now!", new_teacher_booking_path(@teacher)%></p>
           <% if @teacher.user == current_user %>
           <p class="btn btn-red"><%= link_to "Delete user!", teacher_path(@teacher), method: :delete, data: { confirm: "Are you sure?" }%></p>
-          <% end %>
           <p class="btn btn-yellow"><%= link_to "Add a new review", new_teacher_review_path(@teacher)%></p>
+          <% end %>
         </div>
       </div>
   <% if @teacher.reviews.exists? %>
@@ -31,11 +31,12 @@
       <div class="card-product-review">
         <%= cl_image_tag current_user.photo.key, height: 200, width: 400%>
         <div class="review-infos">
-         <h2>What did <%=review.user.name%> think about this teacher?</h2>
-          <p><%= review.comment %></p>
+          <p><%= review.user.name %> said: </p>
+          <h1>"<%= review.comment %>"</h1>
         </div>
       </div>
     <% end %>
       </div>
+          <hr>
 </div>
 <% end %>
