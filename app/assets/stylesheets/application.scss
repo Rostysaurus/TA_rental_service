@@ -11,3 +11,10 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+@import "components/show.scss";
+
+.review {
+  margin: 30px;
+  margin: 0 auto;
+}
