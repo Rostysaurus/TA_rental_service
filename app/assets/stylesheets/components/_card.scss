@@ -1,6 +1,5 @@
 
 .card {
-
 color: black;
 height: 270px;
 width: 250px;
@@ -38,11 +37,11 @@ padding: 10px;
 
 .container-fluid {
   overflow: hidden;
-  background: rgb(255, 255, 255);
-  //box-shadow: 0 0 15px rgba(0,0,0,0.2);
   padding: 6px;
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+    background-color: #f4f4f4;
+    justify-content: center;
 }
 
 .container-fluid > img {
@@ -114,6 +113,7 @@ padding: 10px;
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+  text-align: center;
 }
 
 .card-product-review p {
@@ -128,9 +128,13 @@ padding: 10px;
   padding: 16px;
 }
 
+.review-infos {
+margin-left: 30px;
+}
+
 .teachers-title {
-  background: rgb(255, 255, 255);
-  margin: 0;
+  background-color: #f4f4f4;
+  margin: 20px 0 20px 0;
   padding: 0;
   text-align: center;
   h1 {
@@ -149,4 +153,9 @@ padding: 10px;
     padding: 0;
     color:rgba(63, 62, 62, 0.925)
   }
+}
+
+.btn-home-page {
+  display: flex;
+  justify-content: center;
 }
