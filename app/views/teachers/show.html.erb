@@ -1,35 +1,42 @@
-<h1 >More info about <%= @teacher.name%></h1>
-
-<div class="container-fluid">
-  <div class="row justify-content-md-center">
-      <div class="col col-6 card auto-height p-3">
-        <%= cl_image_tag @teacher.photo.key, height: 150, width: 200, crop: :fill %>
-        <h2><%= @teacher.name %></h2>
-        <p><%= @teacher.description %></p>
-        <p><%= @teacher.address %></p>
-        <p><%= @teacher.price%> EUR</p>
-        <p><%= '⭐️' * @teacher.rating.to_i %></p>
-        <p><%= link_to "Book now!", new_teacher_booking_path(@teacher)%></p>
-        <% if @teacher.user == current_user %>
-        <p><%= link_to "Delete user!", teacher_path(@teacher), method: :delete, data: { confirm: "Are you sure?" }%></p>
-        <% end %>
-        <p class="text-end"><%= link_to "< Back to your bookings", bookings_path%></p>
-        <p class="text-end"><%= link_to "Find another teacher", teachers_path%></p>
-        <p class="text-end"><%= link_to "Add a new review", new_teacher_review_path(@teacher)%></p>
+<div class="show-body">
+    <div class="more-info">
+    <h1 >More info about <strong><%= @teacher.name%></h1></strong>
     </div>
-
-    <div class="row justify-content-md-center">
-    <div class="col col-6 card auto-height p-3">
-    <% @teacher.reviews.each do |review| %>
+      <div class="show">
+        <div class="pic">
+          <%= cl_image_tag @teacher.photo.key, height: 150, width: 200, crop: :fill %>
+          <div>
+          <p><%= @teacher.description %></p>
+          </div>
+        </div>
+        <div class="description">
+          <h2><%= @teacher.name %></h2>
+          <p><%= @teacher.address %></p>
+        </div>
+        <div class="rating-price">
+          <h3><%= '⭐️' * @teacher.rating.to_i %></h3>
+          <h3>€ <%=@teacher.price%></h3>
+        </div>
+        <div class="buttons">
+          <p class="btn btn-blue"><%= link_to "Book now!", new_teacher_booking_path(@teacher)%></p>
+          <% if @teacher.user == current_user %>
+          <p class="btn btn-red"><%= link_to "Delete user!", teacher_path(@teacher), method: :delete, data: { confirm: "Are you sure?" }%></p>
+          <p class="btn btn-yellow"><%= link_to "Add a new review", new_teacher_review_path(@teacher)%></p>
+          <% end %>
+        </div>
+      </div>
+  <% if @teacher.reviews.exists? %>
+    <div class="show review">
+      <% @reviews.each do |review| %>
       <div class="card-product-review">
-        <%= cl_image_tag current_user.photo.key, height: 30, width: 40, crop: :fill%>
-        <div class="card-product-review-infos">
-         <h2>What did <%=review.user.name%> think about this teacher?</h2>
-          <p><%= review.comment %></p>
+        <%= cl_image_tag current_user.photo.key, height: 200, width: 400%>
+        <div class="review-infos">
+          <p><%= review.user.name %> said: </p>
+          <h1>"<%= review.comment %>"</h1>
         </div>
       </div>
     <% end %>
-    </div>
-    </div>
-  </div>
+      </div>
+          <hr>
 </div>
+<% end %>

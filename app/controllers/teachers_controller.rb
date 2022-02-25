@@ -5,6 +5,7 @@ class TeachersController < ApplicationController
 
   def show
     @teacher = Teacher.find(params[:id])
+    @reviews = @teacher.reviews.uniq{|t| t.user_id }
   end
 
   def new
