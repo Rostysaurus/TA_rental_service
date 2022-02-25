@@ -26,11 +26,11 @@
         </div>
       </div>
   <% if @teacher.reviews.exists? %>
-    <div class="show">
+    <div class="show review">
       <% @teacher.reviews.each do |review| %>
       <div class="card-product-review">
-        <%= cl_image_tag current_user.photo.key, height: 30, width: 40, crop: :fill%>
-        <div class="card-product-review-infos">
+        <%= cl_image_tag current_user.photo.key, height: 200, width: 400%>
+        <div class="review-infos">
          <h2>What did <%=review.user.name%> think about this teacher?</h2>
           <p><%= review.comment %></p>
         </div>
