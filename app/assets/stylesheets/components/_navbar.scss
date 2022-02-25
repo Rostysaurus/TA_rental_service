@@ -39,16 +39,33 @@ color: #324E7B;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0;
   position: relative;
   width: 100%;
   box-shadow: none;
+  color: black;
+}
+.navbar.navbar-lewagon {
+  padding-top: 0;
 }
 
+.navbar.navbar-lewagon .container-fluid {
+  background: transparent;
+}
 
-
-.navbar-home a {
+.navbar-wagon a {
+  color: black;
   text-decoration: none;
+}
+
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-lewagon .navbar-brand img {
+  width: 40px;
+}
+
+.navbar-home.navbar-light a.nav-link  {
   color: white;
 }
 
@@ -58,7 +75,6 @@ color: #324E7B;
   position: absolute;
   width: 100%;
   .navbar-wagon-link{
-  color: $black;
   font-weight: bold;
 }
 }
@@ -68,7 +84,7 @@ color: black !important;
 }
 
 .navbar-wagon-brand img {
-  height: 50px;
+  height: 40px;
 }
 
 
