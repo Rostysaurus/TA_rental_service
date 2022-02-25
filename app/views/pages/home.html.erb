@@ -22,6 +22,7 @@
   <div class="row justify-content-md-center">
     <% @teachers.each do |teacher| %>
       <div class="col col-3 card gap-3">
+      <%= cl_image_tag teacher.photo.key , height: 150, width: 200, crop: :fill %>
         <p><%= link_to teacher.name, teacher_path(teacher)%></p>
         <p><%= teacher.price%> EUR</p>
         <p><%= '⭐️' * teacher.rating.to_i %></p>
