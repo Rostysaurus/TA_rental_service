@@ -9,6 +9,22 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
+          <div class="navbar-wagon-item">
+            <div class="alignitems">
+              <div>
+                <%= link_to "Become a teacher", new_teacher_path %>
+              </div>
+              <div class="header-btn">
+                <%= link_to "Sign up", new_user_session_path%>
+              </div>
+              <div>
+                <%= link_to "Log in", new_user_session_path %>
+              </div>
+             </div>
+        </div>
+         </div>
+        </div>
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
