@@ -11,3 +11,119 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+@import "components/show.scss";
+
+// .show-body {
+//   background-color: #dee0e642
+// }
+
+.show-body h1 {
+padding: 30px 0 30px 0;
+text-align: center;
+}
+
+.show {
+  padding: 20px 20px 0 20px;
+  background-color: white;
+  margin-top: 50px;
+  border: none;
+  width: 50%;
+  padding: 20px 20px 0 20px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+  -moz-box-shadow: 0 10px 6px -6px #777;
+  box-shadow: 0 10px 6px -6px #777;
+}
+
+.pic {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pic p {
+  padding-left: 20px;
+  font-style: italic;
+}
+
+.description {
+  margin-top: 20px;
+}
+
+.rating-price {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+};
+
+.btn {
+  text-decoration: none;
+    padding: 10px;
+
+}
+
+.btn-blue {
+  background-color: #1AC0C6;
+}
+
+.btn-red {
+  background-color: #FF6150;
+}
+
+.btn-yellow {
+  background-color: #FFA822;
+}
+
+.btn:hover {
+  background-color: white;
+  border: solid rgb(65, 65, 65) 0.1px;
+}
+
+.btn a:hover {
+  color: rgb(65, 65, 65);
+}
+
+.btn input {
+  text-decoration: none;
+    background-color: inherit;
+    border: none;
+    color: white;
+}
+
+.btn input:hover {
+  color: rgb(65, 65, 65);
+}
+
+.btn a {
+  text-decoration: none;
+  color: white;
+}
+
+.buttons {
+  margin-top: 20px;
+  align-items: flex-end;
+  display: flex;
+  justify-content: space-between;
+}
+
+.booking-show-btns {
+  margin: 0 auto;
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+}
+
+.booking-show-btns p {
+  margin: 0 20px 0 20px;
+}
+
+.dates {
+  align-items: center;
+}
+
+.dates h4 {
+  padding: 10px;
+}
