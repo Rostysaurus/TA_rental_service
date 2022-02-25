@@ -27,8 +27,7 @@
       </div>
   <% if @teacher.reviews.exists? %>
     <div class="show review">
-      <% @teacher.reviews.each do |review| %>
-      <hr>
+      <% @reviews.each do |review| %>
       <div class="card-product-review">
         <%= cl_image_tag current_user.photo.key, height: 200, width: 400%>
         <div class="review-infos">
