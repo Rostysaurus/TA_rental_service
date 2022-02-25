@@ -1,3 +1,4 @@
+<% content_for( :navbar_class, "navbar-home") %>
 
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=brooke-cagle-g1Kr4Ozfoac-unsplash.jpg);">
   <div class="banner-content">
@@ -22,6 +23,8 @@
     <% @teachers.each do |teacher| %>
       <div class="col col-3 card gap-3" style= "box-shadow: 0 0 10px #000000">
         <%= cl_image_tag teacher.photo.key , height: 150, width: 200, crop: :fill %>
+      <div class="col col-3 card gap-3">
+      <%= cl_image_tag teacher.photo.key , height: 150, width: 200, crop: :fill %>
         <p><%= link_to teacher.name, teacher_path(teacher)%></p>
         <p><%= teacher.price%> EUR</p>
         <p><%= '⭐️' * teacher.rating.to_i %></p>
